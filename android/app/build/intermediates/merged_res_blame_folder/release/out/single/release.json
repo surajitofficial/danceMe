@@ -1,0 +1,210 @@
+[
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_icontune2.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_icontune2.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_mask.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_mask.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_filter.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_filter.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_tikred.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_tikred.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_liveicon.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_liveicon.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_group.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_group.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxhdpi_node_modules_reactnativecalendars_src_calendar_img_previous.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxhdpi/node_modules_reactnativecalendars_src_calendar_img_previous.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xhdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xhdpi/node_modules_reactnativecalendars_src_img_up.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_search.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_search.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-hdpi_node_modules_reactnativecalendars_src_img_down.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-hdpi/node_modules_reactnativecalendars_src_img_down.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_onboarding03.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_onboarding03.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxxhdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxxhdpi/node_modules_reactnativecalendars_src_img_up.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxxhdpi_node_modules_reactnativecalendars_src_calendar_img_previous.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxxhdpi/node_modules_reactnativecalendars_src_calendar_img_previous.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_img1.jpg.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_img1.jpg"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_liveiconon.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_liveiconon.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-hdpi_node_modules_reactnativecalendars_src_calendar_img_next.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-hdpi/node_modules_reactnativecalendars_src_calendar_img_next.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.danceme.app-main-36:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-hdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-hdpi/node_modules_reactnativecalendars_src_img_up.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_onboarding02.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_onboarding02.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xhdpi_node_modules_reactnativecalendars_src_calendar_img_next.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xhdpi/node_modules_reactnativecalendars_src_calendar_img_next.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/node_modules_reactnativecalendars_src_img_up.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_node_modules_reactnativecalendars_src_img_down.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/node_modules_reactnativecalendars_src_img_down.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxhdpi_node_modules_reactnativecalendars_src_calendar_img_next.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxhdpi/node_modules_reactnativecalendars_src_calendar_img_next.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xhdpi_node_modules_reactnativecalendars_src_calendar_img_previous.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xhdpi/node_modules_reactnativecalendars_src_calendar_img_previous.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_onboarding01.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_onboarding01.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_img2.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_img2.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxxhdpi_node_modules_reactnativecalendars_src_img_down.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxxhdpi/node_modules_reactnativecalendars_src_img_down.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_buttonnext.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_buttonnext.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxhdpi_node_modules_reactnativecalendars_src_img_up.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxhdpi/node_modules_reactnativecalendars_src_img_up.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_icontune1.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_icontune1.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-hdpi_node_modules_reactnativecalendars_src_calendar_img_previous.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-hdpi/node_modules_reactnativecalendars_src_calendar_img_previous.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxxhdpi_node_modules_reactnativecalendars_src_calendar_img_next.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxxhdpi/node_modules_reactnativecalendars_src_calendar_img_next.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xhdpi_node_modules_reactnativecalendars_src_img_down.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xhdpi/node_modules_reactnativecalendars_src_img_down.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-xxhdpi_node_modules_reactnativecalendars_src_img_down.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-xxhdpi/node_modules_reactnativecalendars_src_img_down.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.danceme.app-main-36:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_plus.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_plus.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-mdpi_src_assets_images_onboarding04.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-mdpi/src_assets_images_onboarding04.png"
+    },
+    {
+        "merged": "com.danceme.app-merged_res-35:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.danceme.app-res-29:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    }
+]

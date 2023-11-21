@@ -1,0 +1,90 @@
+/* eslint-disable prettier/prettier */
+// import 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
+import DancerListScreen from './src/screens/DancerListScreen';
+import DancerProfileScreen from './src/screens/DancerProflie';
+import DjList from './src/screens/DjList';
+import DjProfile from './src/screens/DjProfile';
+import History from './src/screens/History';
+import OnboardingScreen from './src/screens/OnboardingScreen';
+import RequestPackSongScreen from './src/screens/RequestPackSongScreen';
+import RequestSingleSongScreen from './src/screens/RequestSingleSongScreen';
+import RequestSongScreen from './src/screens/RequestSongScreen';
+import ScheduleScreen from './src/screens/ScheduleScreen';
+import SignInScreen from './src/screens/SignInScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
+import SongRequest from './src/screens/SongRequest';
+import WelcomeScreen from './src/screens/WelcomeScreen';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  const [isAppFirstLaunched, setIsAppFirstLaunched] = useState(null);
+
+  useEffect(() => {
+    const checkAppFirstLaunch = async () => {
+      const appData = await AsyncStorage.getItem('isAppFirstLaunched');
+      if (appData === null) {
+        setIsAppFirstLaunched(true);
+        await AsyncStorage.setItem('isAppFirstLaunched', 'false');
+      } else {
+        setIsAppFirstLaunched(false);
+      }
+    };
+    checkAppFirstLaunch();
+  }, []);
+
+  if (isAppFirstLaunched === null) {
+    return null; // or Loading component if preferred
+  }
+
+  return (
+    <NavigationContainer>
+      <Provider store={store}>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          {/* {isAppFirstLaunched && (
+          <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
+        )} */}
+          {/* RequestSongScreen */}
+
+          <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
+          {/* <Stack.Screen name="OnboardingScreen" component={DancerListScreen} /> */}
+          <Stack.Screen name="SignInScreen" component={SignInScreen} />
+          <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+          <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+          <Stack.Screen name="DancerListScreen" component={DancerListScreen} />
+          <Stack.Screen
+            name="DancerProfileScreen"
+            component={DancerProfileScreen}
+          />
+          <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
+          <Stack.Screen name="HistoryScreen" component={History} />
+          <Stack.Screen name="HomeScreen" component={DancerListScreen} />
+          <Stack.Screen name="DjListScreen" component={DjList} />
+          <Stack.Screen name="DjProfileScreen" component={DjProfile} />
+          <Stack.Screen
+            name="RequestSongScreen"
+            component={RequestSongScreen}
+          />
+          <Stack.Screen name="SongRequest" component={SongRequest} />
+
+          <Stack.Screen
+            name="RequestSingleSongScreen"
+            component={RequestSingleSongScreen}
+          />
+          <Stack.Screen
+            name="RequestPackSongScreen"
+            component={RequestPackSongScreen}
+          />
+        </Stack.Navigator>
+      </Provider>
+    </NavigationContainer>
+  );
+};
+
+export default App;
