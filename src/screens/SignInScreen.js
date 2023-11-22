@@ -11,7 +11,8 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setClientRole } from '../redux/slice/authSlice';
 import { Style } from '../style/Style';
 import { BodyHeadTxt, ButtonStyle, InputStyled, TopSubText } from '../ui/Styled';
 
@@ -22,8 +23,10 @@ const SignInScreen = ({navigation}) => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [customError, setCustomError] = useState(false);
   // redux hooks
   const user = useSelector(state => state.auth.user);
+  const disPatch = useDispatch();
   // From validation
   const validateForm = () => {
     let formErrors = {};
@@ -60,8 +63,16 @@ const SignInScreen = ({navigation}) => {
         await waitTwoSeconds();
         setIsError(false);
         setIsLoading(false);
-        navigation.push('WelcomeScreen');
-        console.log('SUCCES');
+        setCustomError(false);
+        if (email === 'user@test.com') {
+          disPatch(setClientRole(email.split('@')[0]));
+          navigation.push('WelcomeScreenForUser');
+        } else if (email === 'dancer@test.com' || email === 'dj@test.com') {
+          disPatch(setClientRole(email.split('@')[0]));
+          navigation.push('WelcomeScreenForDjDancer');
+        } else {
+          setCustomError(true);
+        }
       } catch (error) {
         setIsError(true);
       }
@@ -173,7 +184,16 @@ const SignInScreen = ({navigation}) => {
           {isLoading ? 'wait...' : 'Sign In'}
         </Text>
       </ButtonStyle>
-
+      {customError && (
+        <Text
+          style={{
+            color: 'red',
+            marginHorizontal: 'auto',
+            marginVertical: 8,
+          }}>
+          {'Email not accepted'}
+        </Text>
+      )}
       <TouchableOpacity
         style={Style.faceBookWrp}
         onPress={() => {

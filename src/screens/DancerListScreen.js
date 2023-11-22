@@ -61,6 +61,7 @@ const DancerList = ({navigation}) => {
               solidBtnFunc={handleBook}
               solidBtnTxt="Book"
               navigateFunc={handleBook}
+              dancerProfileNavigationFun={()=>navigation.push('DancerProfileScreen')}
             />
           ))}
         </View>

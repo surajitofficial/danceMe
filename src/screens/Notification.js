@@ -12,6 +12,7 @@ import TopNavigation from '../components/TopNavigation';
 import { Style } from '../style/Style';
 
 const Notification = () => {
+
   const NotificationRow = ({children}) => {
     return (
       <View style={styles.listRow}>
@@ -35,8 +36,8 @@ const Notification = () => {
 
       <ScrollView>
         <View style={[Style.mainBackground, Style.mainBackgroundGray]}>
-          {Array.from({length: 12}).map((v, i) => (
-            <NotificationRow key={i}>
+          {Array.from({length: 1}).map((v, i) => (
+            <NotificationRow  key={i}>
               {' '}
               You have booked 2 hours of Dance with Taylor Swift.{' '}
             </NotificationRow>

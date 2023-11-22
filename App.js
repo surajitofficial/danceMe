@@ -6,11 +6,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React, { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
+import DanceRequest from './src/screens/DanceRequest';
 import DancerListScreen from './src/screens/DancerListScreen';
 import DancerProfileScreen from './src/screens/DancerProflie';
 import DjList from './src/screens/DjList';
 import DjProfile from './src/screens/DjProfile';
 import History from './src/screens/History';
+import Notification from './src/screens/Notification';
 import OnboardingScreen from './src/screens/OnboardingScreen';
 import RequestPackSongScreen from './src/screens/RequestPackSongScreen';
 import RequestSingleSongScreen from './src/screens/RequestSingleSongScreen';
@@ -19,7 +21,8 @@ import ScheduleScreen from './src/screens/ScheduleScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import SongRequest from './src/screens/SongRequest';
-import WelcomeScreen from './src/screens/WelcomeScreen';
+import WelcomeScreenForDjDancer from './src/screens/WelcomeScreenForDjDancer';
+import WelcomeScreenForUser from './src/screens/WelcomeScreenForUser';
 
 const Stack = createStackNavigator();
 
@@ -55,31 +58,24 @@ const App = () => {
           {/* <Stack.Screen name="OnboardingScreen" component={DancerListScreen} /> */}
           <Stack.Screen name="SignInScreen" component={SignInScreen} />
           <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-          <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+          {/* WELCOME SCREEN */}
+          <Stack.Screen name="WelcomeScreenForUser"component={WelcomeScreenForUser}/>
+          <Stack.Screen name="WelcomeScreenForDjDancer" component={WelcomeScreenForDjDancer}/>
           <Stack.Screen name="DancerListScreen" component={DancerListScreen} />
-          <Stack.Screen
-            name="DancerProfileScreen"
-            component={DancerProfileScreen}
-          />
+          <Stack.Screen name="DancerProfileScreen" component={DancerProfileScreen}/>
           <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
           <Stack.Screen name="HistoryScreen" component={History} />
-          <Stack.Screen name="HomeScreen" component={DancerListScreen} />
+          {/* <Stack.Screen name="HomeScreen" component={DancerListScreen} /> */}
           <Stack.Screen name="DjListScreen" component={DjList} />
           <Stack.Screen name="DjProfileScreen" component={DjProfile} />
-          <Stack.Screen
-            name="RequestSongScreen"
-            component={RequestSongScreen}
-          />
+          {/* REQUESTED SCREEN */}
+          <Stack.Screen name="RequestSongScreen"component={RequestSongScreen}/>
+          <Stack.Screen name="DanceRequestScreen"component={DanceRequest}/>
           <Stack.Screen name="SongRequest" component={SongRequest} />
+          <Stack.Screen name="RequestSingleSongScreen" component={RequestSingleSongScreen}/>
+          <Stack.Screen name="RequestPackSongScreen" component={RequestPackSongScreen}/>
+          <Stack.Screen name="notificationScreen" component={Notification}/>
 
-          <Stack.Screen
-            name="RequestSingleSongScreen"
-            component={RequestSingleSongScreen}
-          />
-          <Stack.Screen
-            name="RequestPackSongScreen"
-            component={RequestPackSongScreen}
-          />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

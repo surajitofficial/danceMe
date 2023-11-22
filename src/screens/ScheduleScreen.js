@@ -85,10 +85,10 @@ const ScheduleScreen = ({navigation}) => {
       };
       try {
         await waitTwoSeconds();
-        notifyMessage('Payment success.');
+        notifyMessage('SUCCESS.');
         setIsError(false);
         setIsLoading(false);
-        navigation.push('HistoryScreen');
+        navigation.push('DanceRequestScreen');
         console.log({
           selectedDate,
           startTime: selectedTime,
@@ -240,7 +240,7 @@ const ScheduleScreen = ({navigation}) => {
         <View style={{alignItems: 'center', paddingBottom: 10}}>
           <ButtonStyle onPress={handleSubmit}>
             <Text style={styles.paymentButtonText}>
-              {isLoading ? 'sending...' : 'Make Payment'}
+              {isLoading ? 'sending...' : 'Send Request'}
             </Text>
           </ButtonStyle>
         </View>

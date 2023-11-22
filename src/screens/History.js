@@ -9,11 +9,13 @@ import {
   View,
 } from 'react-native';
 import { } from 'react-native-gesture-handler';
+import { useSelector } from 'react-redux';
 import ListItem from '../components/ListItem';
 import TopNavigation from '../components/TopNavigation';
 import { Style } from '../style/Style';
 
 const History = () => {
+  const role = useSelector(state => state?.auth?.clientRole);
   return (
     <View style={Style.wrpAll}>
       <StatusBar
@@ -35,7 +37,7 @@ const History = () => {
           </View>
           {Array.from({length: 12}).map((v, i) => (
             <ListItem
-            key={i}
+              key={i}
               screen="history"
               image={require('../assets/images/img1.jpg')}
               name="Nikki Bohne"
@@ -43,6 +45,7 @@ const History = () => {
               timeInHistory="10 Sep, 2023   07:00 PM"
               duration="3"
               club="NYC Downtown, Tribeca"
+              isUser={role === 'user'}
             />
           ))}
         </View>

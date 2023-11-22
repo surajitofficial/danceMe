@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import uuid from 'react-native-uuid';
+import { useSelector } from 'react-redux';
 import TopNavigation from '../components/TopNavigation';
 import { BodyHeadTxt, ButtonStyle, InputStyled } from '../ui/Styled';
 
@@ -23,6 +24,8 @@ const RequestPackSongScreen = ({navigation}) => {
   const [formData, setFromData] = useState([{songName: '', singerName: ''}]);
   const [errors, setErrors] = useState({});
   const [anyF, setAny] = useState(''); // for re-render this component
+
+  const role = useSelector(state => state?.auth?.clientRole);
 
   // From validation
   const validateForm = () => {
@@ -46,7 +49,7 @@ const RequestPackSongScreen = ({navigation}) => {
     const isValid = validateForm();
     if (isValid) {
       console.log({songCat, formData});
-      navigation.push('SongRequest');
+      navigation.push('SongRequest', {user: role === 'user'});
     }
   };
   const handleSongNameChange = (v, index) => {

@@ -1,14 +1,38 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { StatusBar, StyleSheet, View } from 'react-native';
+import {
+  AlertIOS,
+  Platform,
+  StatusBar,
+  StyleSheet,
+  ToastAndroid,
+  View,
+} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useDispatch, useSelector } from 'react-redux';
 import ListItem from '../components/ListItem';
 import TopNavigation from '../components/TopNavigation';
+import { setDancePayment } from '../redux/slice/authSlice';
 import { Style } from '../style/Style';
 
-const DanceRequest = () => {
+const DanceRequest = ({navigation}) => {
+  const role = useSelector(state => state?.auth?.clientRole);
+  const disPatch = useDispatch();
+
   const handleAccept = () => {};
   const handleReject = () => {};
+  function notifyMessage(msg) {
+    if (Platform.OS === 'android') {
+      ToastAndroid.show(msg, ToastAndroid.SHORT);
+    } else {
+      AlertIOS.alert(msg);
+    }
+  }
+  const handleDancePayment = () => {
+    notifyMessage('Payment success');
+    disPatch(setDancePayment(true));
+    navigation.push('HistoryScreen');
+  };
   return (
     <View style={Style.wrpAll}>
       <StatusBar
@@ -25,7 +49,7 @@ const DanceRequest = () => {
             Style.mainBackgroundGray,
             {paddingTop: 15},
           ]}>
-          {Array.from({length: 12}).map((v, i) => (
+          {Array.from({length: 1}).map((v, i) => (
             <ListItem
               key={i}
               request="Request by"
@@ -38,6 +62,12 @@ const DanceRequest = () => {
               solidBtnTxt="Accept"
               outlineBtnFunc={handleReject}
               outlineBtnTxt="Reject"
+              navigation={navigation}
+              isUser={role === 'user'}
+              isDancerOrDj={role !== 'user'}
+              danceReq={true}
+              songReq={false}
+              handleDancePayment={handleDancePayment}
             />
           ))}
         </View>
