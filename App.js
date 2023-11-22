@@ -51,7 +51,6 @@ const App = () => {
           <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
         )} */}
           {/* RequestSongScreen */}
-
           <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
           {/* <Stack.Screen name="OnboardingScreen" component={DancerListScreen} /> */}
           <Stack.Screen name="SignInScreen" component={SignInScreen} />
