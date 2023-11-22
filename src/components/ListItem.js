@@ -229,7 +229,7 @@ const ListItem = ({
                   handleDancePayment && handleDancePayment();
                 }
               }} style={[styles.fontWhite, {color: '#D9246D'}]}>
-                {danceReqIsAccept === 'Accept' && dancePayment ? 'Payment success' : 'Pay Now'}
+                {danceReqIsAccept === 'Accept' && dancePayment ? 'Payment success' : danceReqIsAccept === 'Accept' && 'Pay Now'}
                 {danceReqIsAccept === 'Reject' && 'rejected'}
                 {danceReqIsAccept === '' && 'pending'}
               </Text>
@@ -243,7 +243,7 @@ const ListItem = ({
                   handleSongPayment && handleSongPayment();
                 }
               }} style={[styles.fontWhite, {color: '#D9246D'}]}>
-                {songReqIsAccept === 'Accept' && songPayment ? 'Payment success' : 'Pay Now'}
+                {songReqIsAccept === 'Accept' && songPayment ? 'Payment success' : songReqIsAccept === 'Accept' && 'Pay Now'}
                 {songReqIsAccept === 'Reject' && 'rejected'}
                 {songReqIsAccept === '' && 'pending'}
               </Text>
