@@ -49,7 +49,7 @@ const RequestPackSongScreen = ({navigation}) => {
     const isValid = validateForm();
     if (isValid) {
       console.log({songCat, formData});
-      navigation.push('SongRequest', {user: role === 'user'});
+      navigation.push('SongRequest', {packOfSong: true});
     }
   };
   const handleSongNameChange = (v, index) => {

@@ -1,156 +1,157 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import {
-    BoxRoundedConerStyled,
-    SmallButtonStyle,
-    SmallOutlineButtonStyle,
+  BoxRoundedConerStyled,
+  SmallButtonStyle,
+  SmallOutlineButtonStyle,
 } from '../ui/Styled';
-import ListImage from './ListImage';
 
-const DanceRequestList = () => {
+const DancerRequestList = ({
+  playLive,
+  icon,
+  price,
+  request,
+  name,
+  type,
+  requestTime,
+  outlineBtnTxt,
+  solidBtnTxt,
+  // state
+  dancePaymentState,
+  danceReqState,
+  // handle Fun
+  handleReject,
+  handleAccept,
+  handleDancePayment,
+}) => {
+  const clientRole = useSelector(state => state.auth.clientRole);
 
-  const liveIcon = true ? require('../assets/images/liveIconOn.png') : require('../assets/images/liveIcon.png');
-
+  const liveIcon = playLive
+    ? require('../assets/images/liveIconOn.png')
+    : require('../assets/images/liveIcon.png');
   return (
-    <BoxRoundedConerStyled
-      style={
-        false === 'songRequestOrder' &&
-        true === 'odd' && {backgroundColor: '#F5E3EA'}
-      }>
-      {false && <ListImage image={'image'} />}
-      {false && <Image source={'icon'} />}
-
+    <BoxRoundedConerStyled>
+      {icon && <Image source={icon} />}
       <View style={{flex: 1, gap: 5}}>
         <View style={styles.positionLeft}>
-          {/* {screen == 'djlist'  ? <Image source={require('../assets/images/liveIcon.png')} /> :
-       <> {price && <Text style={styles.font12}>{ pinkColor && <Image source={require('../assets/images/tikred.png')} /> } $ {price}</Text>}
-          {hrs && <Text style={styles.font10}>Min {hrs} hr</Text>}</>
-           } */}
-          {true == 'djlist' && (
-            <Image source={liveIcon} />
-          )}
-          {false && (
-            <Text style={styles.font12}>
-              {false === 'history' && (
-                <Image source={require('../assets/images/tikred.png')} />
-              )}{' '}
-              &nbsp; ${'price'}
-            </Text>
-          )}
-          {'hrs' && <Text style={styles.font10}>Min {'hrs'} hr</Text>}
+          {price && <Text style={styles.font12}>&nbsp; ${price}</Text>}
         </View>
-
-        {true && (
-          <Text style={[styles.font12, {color: '#8A8A8F'}]}> {'request'} </Text>
+        {request && (
+          <Text style={[styles.font12, {color: '#8A8A8F'}]}> {request} </Text>
         )}
-        {true && (
+        {/* NAME */}
+        {name && (
           <Text style={styles.itemHeading}>
-            {'name'}{' '}
-            {true && (
-              <Text style={[styles.font10, {paddingLeft: 10}]}>
-                <Text style={{color: '#8A8A8F'}}> Age:</Text> {'age'}
-              </Text>
-            )}
+            <TouchableOpacity>
+              <Text>{name}</Text>
+            </TouchableOpacity>
           </Text>
         )}
-        {false && (
-          <Text style={[styles.font12, {color: '#8A8A8F'}]}>
-            {'timeInHistory'}
-          </Text>
-        )}
-        {true && (
+        {/* TYPE OF DANCE */}
+        {type && (
           <Text style={styles.font12}>
-            <Text style={{color: '#8A8A8F'}}>Type:</Text> {'Salsa hiphop'}
+            <Text style={{color: '#8A8A8F'}}>Type:</Text> {type}
           </Text>
         )}
-
-        {true == 'djlist' && (
-          <View style={styles.btnRow}>
-            <TouchableOpacity style={styles.smallBtn}>
-              <Text style={styles.smallBtnText}>$5</Text>
-              <Text style={styles.btnTitle}>Single Song</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.smallBtn}>
-              <Text style={styles.smallBtnText}>$15</Text>
-              <Text style={styles.btnTitle}>Pack of 5</Text>
-            </TouchableOpacity>
-          </View>
+        {/* REQUEST DATE */}
+        {requestTime && (
+          <Text style={[styles.font12, {color: '#000'}]}>{requestTime}</Text>
         )}
-
-        {true && (
-          <View>
-            <Text
-              style={[
-                styles.font12,
-                true ? {color: '#D9246D'} : {color: '#000'},
-              ]}>
-              <Text style={{color: '#8A8A8F'}}>Requested By: </Text>{' '}
-              {'requestedBy'}{' '}
-              <Text style={{color: '#8A8A8F'}}> time </Text>
-            </Text>
-
-            {/* {duration && (
-              <Text
-                style={[
-                  styles.font12,
-                  screen === 'history' ? {color: '#D9246D'} : {color: '#000'},
-                ]}>
-                <Text style={{color: '#8A8A8F'}}>Duration11: </Text> {duration}
-              </Text>
-            )} */}
-          </View>
-        )}
-
-        {true && (
-          <View style={{flexDirection: 'row', gap: 5}}>
-            <Text
-              style={[
-                styles.font12,
-                false === 'history' ? {color: '#D9246D'} : {color: '#000'},
-              ]}>
-              <Text style={{color: '#8A8A8F'}}>Clubs: </Text> {'club'}
-            </Text>
-
-            {'duration' && (
-              <Text
-                style={[
-                  styles.font12,
-                  false === 'history' ? {color: '#D9246D'} : {color: '#000'},
-                ]}>
-                <Text style={{color: '#8A8A8F'}}>Duration: </Text> {'duration'}
-              </Text>
-            )}
-          </View>
-        )}
-
-        {false && (
-          <Text style={[styles.font12, {color: '#000'}]}>
-            {'requestTime'}
-          </Text>
-        )}
-
         <View style={styles.btnrow}>
-          {true && (
-            <SmallOutlineButtonStyle>
-              <Text style={[styles.fontWhite, {color: '#D9246D'}]}>
-                {'outlineBtnTxt'}
-              </Text>
-            </SmallOutlineButtonStyle>
-          )}
-          {true && (
-            <SmallButtonStyle>
-              <Text style={styles.fontWhite}>{'solidBtnTxt'}</Text>
-            </SmallButtonStyle>
-          )}
+          {/* FOR USER START */}
+          <>
+            {/* Pending */}
+            {clientRole === 'user' && danceReqState === '' && (
+              <SmallOutlineButtonStyle>
+                <Text style={([styles.fontWhite], {color: '#D9246D'})}>
+                  pending
+                </Text>
+              </SmallOutlineButtonStyle>
+            )}
+            {/* Reject */}
+            {clientRole === 'user' && danceReqState === 'Reject' && (
+              <SmallOutlineButtonStyle>
+                <Text style={([styles.fontWhite], {color: '#D9246D'})}>
+                  rejected
+                </Text>
+              </SmallOutlineButtonStyle>
+            )}
+            {/* Buy Now */}
+            {clientRole === 'user' &&
+              danceReqState === 'Accept' &&
+              !dancePaymentState && (
+                <SmallButtonStyle>
+                  <Text onPress={handleDancePayment} style={[styles.fontWhite]}>
+                    Buy Now
+                  </Text>
+                </SmallButtonStyle>
+              )}
+            {/* Payment Success */}
+            {clientRole === 'user' &&
+              danceReqState === 'Accept' &&
+              dancePaymentState && (
+                <SmallOutlineButtonStyle>
+                  <Text style={([styles.fontWhite], {color: '#D9246D'})}>
+                    Payment Success
+                  </Text>
+                </SmallOutlineButtonStyle>
+              )}
+          </>
+          {/* FOR USER END */}
+          {/* DANCER/DJ START */}
+          <>
+            {/* FOR DANCER OR DJ ACCEPT REJECT  */}
+            {(clientRole === 'dj' || clientRole === 'dancer') &&
+              danceReqState === '' && (
+                <>
+                  <SmallOutlineButtonStyle onPress={handleReject}>
+                    <Text style={[styles.fontWhite, {color: '#D9246D'}]}>
+                      {outlineBtnTxt}
+                    </Text>
+                  </SmallOutlineButtonStyle>
+                  <SmallButtonStyle onPress={handleAccept}>
+                    <Text style={styles.fontWhite}>{solidBtnTxt}</Text>
+                  </SmallButtonStyle>
+                </>
+              )}
+            {/* FOR DANCER OR DJ REJECT  */}
+            {(clientRole === 'dj' || clientRole === 'dancer') &&
+              danceReqState === 'Reject' && (
+                <SmallOutlineButtonStyle>
+                  <Text style={([styles.fontWhite], {color: '#D9246D'})}>
+                    you reject this
+                  </Text>
+                </SmallOutlineButtonStyle>
+              )}
+            {/* FOR DANCER OR DJ ACCEPT AND BEFORE PAYMENT  */}
+            {(clientRole === 'dj' || clientRole === 'dancer') &&
+              danceReqState === 'Accept' &&
+              !dancePaymentState && (
+                <SmallButtonStyle>
+                  <Text style={[styles.fontWhite]}>wait for payment</Text>
+                </SmallButtonStyle>
+              )}
+            {/* FOR DANCER OR DJ AFTER PAYMENT  */}
+            {(clientRole === 'dj' || clientRole === 'dancer') &&
+              danceReqState === 'Accept' &&
+              dancePaymentState && (
+                <SmallOutlineButtonStyle>
+                  <Text style={([styles.fontWhite], {color: '#D9246D'})}>
+                    already payment
+                  </Text>
+                </SmallOutlineButtonStyle>
+              )}
+          </>
+          {/* DANCER/DJ END */}
         </View>
       </View>
     </BoxRoundedConerStyled>
   );
 };
 
-export default DanceRequestList;
+export default DancerRequestList;
 
 const styles = StyleSheet.create({
   odd: {backgroundColor: '#F5E3EA', borderColor: 'red', borderWidth: 1},

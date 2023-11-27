@@ -1,6 +1,14 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { FlatList, Image, StatusBar, StyleSheet, Text, View } from 'react-native';
+import {
+  FlatList,
+  Image,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import TopNavigation from '../components/TopNavigation';
 import { Style } from '../style/Style';
@@ -12,7 +20,6 @@ const DjProfile = ({navigation}) => {
     require('../assets/images/img2.png'),
     require('../assets/images/img2.png'),
   ];
-
   const songList = [
     {id: 1, songName: 'Cruel Summer1'},
     {id: 2, songName: 'Cruel Summer2'},
@@ -33,6 +40,9 @@ const DjProfile = ({navigation}) => {
       </View>
     );
   };
+  const handleOnClick = path => {
+    navigation.push(path);
+  };
 
   return (
     <View style={Style.wrpAll}>
@@ -44,7 +54,7 @@ const DjProfile = ({navigation}) => {
       <TopNavigation backBtn={true} title="DJ" />
 
       <View style={[Style.mainBackground, Style.mainBackgroundGray]}>
-        <View style={styles.djProfile}>
+        {/* <View style={styles.djProfile}>
           <View style={styles.djPic}>
             <Image
               style={styles.img}
@@ -53,8 +63,43 @@ const DjProfile = ({navigation}) => {
           </View>
           <Text style={styles.djNam}>Nikki Bohne</Text>
           <Text style={styles.djLocation}>San Francisco, USA</Text>
+        </View> */}
+        <View style={styles.container}>
+          {/* Left side (Blank) */}
+          <View style={styles.left} />
+
+          {/* Middle portion with avatar, title, and location */}
+          <View style={styles.middle}>
+            {/* Avatar */}
+            <Image
+              source={require('../assets/images/img1.jpg')} // Replace with actual avatar URL
+              style={styles.avatar}
+            />
+
+            {/* Title */}
+            <Text style={styles.title}>Nikki Bohne</Text>
+
+            {/* Location */}
+            <Text style={styles.location}>Sen Francisco, USA</Text>
+          </View>
+
+          {/* Right side with buttons */}
+          <View style={styles.right}>
+            {/* Request button */}
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => handleOnClick('DancerListScreen')}>
+              <Text style={styles.buttonText}>Request</Text>
+            </TouchableOpacity>
+            {/* Chat button */}
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => handleOnClick('ChatScreen')}>
+              <Text style={styles.buttonText}>Chat</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <Text style={styles.title}>Associated Clubs</Text>
+        <Text style={styles.subtitle}>Associated Clubs</Text>
         <ScrollView horizontal>
           <View style={styles.gallery}>
             {galleryImages.map((image, index) => (
@@ -65,10 +110,7 @@ const DjProfile = ({navigation}) => {
             ))}
           </View>
         </ScrollView>
-        <Text style={styles.title}>Associated Clubs</Text>
-        <Text style={styles.txtCat}>Salsa, Hiphop</Text>
         <Text style={styles.title}>Song List</Text>
-
         <FlatList
           style={{width: '100%'}}
           data="songList"
@@ -82,7 +124,7 @@ const DjProfile = ({navigation}) => {
 export default DjProfile;
 
 const styles = StyleSheet.create({
-  title: {
+  subtitle: {
     color: '#000',
     marginVertical: 5,
     fontFamily: 'Plus Jakarta Sans',
@@ -151,5 +193,53 @@ const styles = StyleSheet.create({
     fontFamily: 'Plus Jakarta Sans',
     fontSize: 15,
     fontWeight: '500',
+  },
+  //
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 16,
+    // borderWidth: 1,
+    // borderColor: '#ccc',
+  },
+  left: {
+    flex: 1, // Takes one-third of the space
+  },
+  middle: {
+    flex: 1, // Takes one-third of the space
+    alignItems: 'center',
+  },
+  right: {
+    flex: 1, // Takes one-third of the space
+    alignItems: 'flex-end',
+  },
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 8,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  location: {
+    fontSize: 12,
+    color: '#888',
+  },
+  button: {
+    backgroundColor: '#ff2b80',
+    width: 95,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    marginTop: 8,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });

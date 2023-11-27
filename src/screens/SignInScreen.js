@@ -19,7 +19,7 @@ import { BodyHeadTxt, ButtonStyle, InputStyled, TopSubText } from '../ui/Styled'
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -67,9 +67,12 @@ const SignInScreen = ({navigation}) => {
         if (email === 'user@test.com') {
           disPatch(setClientRole(email.split('@')[0]));
           navigation.push('WelcomeScreenForUser');
-        } else if (email === 'dancer@test.com' || email === 'dj@test.com') {
+        } else if (email === 'dancer@test.com') {
           disPatch(setClientRole(email.split('@')[0]));
-          navigation.push('WelcomeScreenForDjDancer');
+          navigation.push('WelcomeScreenForDancer');
+        } else if (email === 'dj@test.com') {
+          disPatch(setClientRole(email.split('@')[0]));
+          navigation.push('WelcomeScreenForDj');
         } else {
           setCustomError(true);
         }
@@ -143,7 +146,6 @@ const SignInScreen = ({navigation}) => {
           marginTop: 20,
           justifyContent: 'space-between',
           alignContent: 'space-between',
-
           width: '92%',
         }}>
         <TouchableOpacity

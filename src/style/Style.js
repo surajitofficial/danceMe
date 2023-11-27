@@ -5,6 +5,7 @@ export const Style = StyleSheet.create({
   wrpAll: {
     flex: 1,
     justifyContent: 'center',
+    backgroundColor:'#F8F8F8',
   },
   mainBackground: {
     backgroundColor: '#fff',

@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useSelector } from 'react-redux';
 import EditProfileDataRow from '../components/EditProfileDataRow';
 import TopNavigation from '../components/TopNavigation';
 import { ButtonStyle, InputStyled } from '../ui/Styled';
@@ -19,18 +20,18 @@ const EditProfileScreen = () => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [adress, setAdress] = useState('');
-
+  const clientRole = useSelector(state => state.auth.clientRole);
+  const forUser = clientRole === 'user';
+  const forDj = clientRole === 'dj';
+  const forDancer = clientRole === 'dancer';
   const handleSignIn = () => {
     // Handle sign-in functionality
   };
 
-  const handleRememberMe = () => {
-    setRememberMe(!rememberMe);
-  };
   const galleryImages = [
     require('../assets/images/img1.jpg'),
     require('../assets/images/img1.jpg'),
-    require('../assets/images/img1.jpg'),
+    require('../assets/images/banner.png'),
   ];
   return (
     <KeyboardAvoidingView
@@ -40,7 +41,12 @@ const EditProfileScreen = () => {
         backgroundColor="#fff"
         barStyle={'dark-content'}
       />
-      <TopNavigation backBtn={true} title="Edit Profile" />
+      <TopNavigation
+        backBtn={true}
+        title={`${forUser ? 'User Edit Profile' : ''}${
+          forDj ? 'DJ Edit Profile' : ''
+        }${forDancer ? 'Dancer Edit Profile' : ''}`}
+      />
 
       <ScrollView style={{height: '93%'}}>
         <View
@@ -71,37 +77,38 @@ const EditProfileScreen = () => {
 
             <Text style={styles.label}>About</Text>
             <InputStyled
-              placeholder="Address"
+              placeholder="Type here..."
               value={adress}
               multiline={true}
-              numberOfLines={4}
+              numberOfLines={40}
               onChangeText={setAdress}
               style={{backgroundColor: '#EFEFF4'}}
               row={12}
             />
 
-            <View
-              style={{
-                paddingVertical: 12,
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: '92%',
-              }}>
-              <Text style={[styles.label, {width: 'auto', paddingLeft: 0}]}>
-                Dance Expertise
-              </Text>
-              <TouchableOpacity style={{marginRight: 10}}>
-                <Image source={require('../assets/images/plusBox.png')} />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.wrpInput}>
+            {!forUser && (
+              <View
+                style={{
+                  paddingVertical: 12,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  width: '92%',
+                }}>
+                <Text style={[styles.label, {width: 'auto', paddingLeft: 0}]}>
+                  Dance Expertise
+                </Text>
+                <TouchableOpacity style={{marginRight: 10}}>
+                  <Image source={require('../assets/images/plusBox.png')} />
+                </TouchableOpacity>
+              </View>
+            )}
+            <View style={[styles.wrpInput]}>
               <EditProfileDataRow title="Tap dance" value="Expert" />
               <EditProfileDataRow title="Ballet" value="Well versed" />
               <EditProfileDataRow title="Jazz dance" value="Beginner" />
               <EditProfileDataRow title="Ballroom" value="Beginner" />
             </View>
-
             <View
               style={{
                 paddingVertical: 12,
@@ -117,42 +124,49 @@ const EditProfileScreen = () => {
                 <Image source={require('../assets/images/plusBox.png')} />
               </TouchableOpacity>
             </View>
-            <View style={styles.gallery}>
+            <View style={[styles.gallery]}>
               {galleryImages.map((image, index) => (
                 <Image key={index} source={image} style={styles.galleryImage} />
               ))}
             </View>
           </View>
 
-          <View
-            style={{
-              paddingVertical: 12,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              width: '92%',
-            }}>
-            <Text style={[styles.label, {width: 'auto', paddingLeft: 0}]}>
-              Clubs I dance
-            </Text>
-            <TouchableOpacity style={{marginRight: 10}}>
-              <Image source={require('../assets/images/plusBox.png')} />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.wrpInput}>
-            <InputStyled
-              placeholder="Song name"
-              value="The Grand"
-              style={[styles.hgtInput, {marginBottom: 0}]}
-            />
-            <InputStyled
-              placeholder="Type singer name"
-              value="Pura Club"
-              style={[styles.hgtInput, {marginBottom: 7}]}
-            />
-          </View>
-
-          <ButtonStyle onPress={handleSignIn}>
+          {!forUser && (
+            <View
+              style={{
+                paddingVertical: 12,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: '92%',
+              }}>
+              <Text style={[styles.label, {width: 'auto', paddingLeft: 0}]}>
+                Clubs I dance
+              </Text>
+              <TouchableOpacity style={{marginRight: 10}}>
+                <Image source={require('../assets/images/plusBox.png')} />
+              </TouchableOpacity>
+            </View>
+          )}
+          {!forUser && (
+            <View style={styles.wrpInput}>
+              <InputStyled
+                placeholder="Song name"
+                value="The Grand"
+                style={[styles.hgtInput, {marginBottom: 0}]}
+              />
+              <InputStyled
+                placeholder="Type singer name"
+                value="Pura Club"
+                style={[styles.hgtInput, {marginBottom: 7}]}
+              />
+            </View>
+          )}
+          <ButtonStyle
+            onPress={handleSignIn}
+            style={
+              ([{marginBottom: 20, marginTop: 10}], forUser && {marginTop: 80})
+            }>
             <Text style={{color: 'white', textAlign: 'center', fontSize: 15}}>
               Update
             </Text>

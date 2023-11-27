@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   reviews: {},
   description: {
-    marginTop: 10,
+    // marginTop: 10,
     color: '#868698',
     marginTop: 5,
     fontFamily: 'Plus Jakarta Sans',

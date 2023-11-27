@@ -49,7 +49,7 @@ const RequestSingleSongScreen = ({navigation}) => {
     const isValid = validateForm();
     if (isValid) {
       console.log({songCat, songName, singerNameType});
-      navigation.push('SongRequest', {user: role === 'user'});
+      navigation.push('SongRequest', {singleSong: true});
     }
   };
 

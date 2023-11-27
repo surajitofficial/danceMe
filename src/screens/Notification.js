@@ -13,6 +13,19 @@ import { Style } from '../style/Style';
 
 const Notification = () => {
 
+  const notificationArray = [
+    {id: 1, body: 'You have booked 2 hours of Dance with Taylor Swift.'},
+    {
+      id: 2,
+      body: 'Your dance booking with Taylor Swift for Oct 10th, at 5pm is confirmed.',
+    },
+    {
+      id: 3,
+      body: 'You have requested DJ Jacky for the song Jump in the air for $5, Oct 20, 6pm.',
+    },
+    {id: 4, body: 'DJ Jacky has accepted your song request.'},
+  ];
+
   const NotificationRow = ({children}) => {
     return (
       <View style={styles.listRow}>
@@ -36,11 +49,8 @@ const Notification = () => {
 
       <ScrollView>
         <View style={[Style.mainBackground, Style.mainBackgroundGray]}>
-          {Array.from({length: 1}).map((v, i) => (
-            <NotificationRow  key={i}>
-              {' '}
-              You have booked 2 hours of Dance with Taylor Swift.{' '}
-            </NotificationRow>
+          {notificationArray.map(v => (
+            <NotificationRow key={v.id}>{v.body}</NotificationRow>
           ))}
         </View>
       </ScrollView>

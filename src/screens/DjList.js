@@ -45,7 +45,7 @@ const DjList = ({navigation}) => {
               type="Salsa, Hiphop"
               solidBtnFunc={handleRequest}
               solidBtnTxt="Request Song"
-              djProfileNavigationFun={()=>navigation.push('DjProfileScreen')}
+              djProfileNavigationFun={() => navigation.push('DjProfileScreen')}
               navigation={navigation}
             />
           ))}

@@ -6,11 +6,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React, { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
+import Chat from './src/screens/Chat';
 import DanceRequest from './src/screens/DanceRequest';
 import DancerListScreen from './src/screens/DancerListScreen';
 import DancerProfileScreen from './src/screens/DancerProflie';
 import DjList from './src/screens/DjList';
 import DjProfile from './src/screens/DjProfile';
+import EditProfileScreen from './src/screens/EditProfileScreen';
 import History from './src/screens/History';
 import Notification from './src/screens/Notification';
 import OnboardingScreen from './src/screens/OnboardingScreen';
@@ -21,8 +23,10 @@ import ScheduleScreen from './src/screens/ScheduleScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import SongRequest from './src/screens/SongRequest';
-import WelcomeScreenForDjDancer from './src/screens/WelcomeScreenForDjDancer';
+import WelcomeScreenForDancer from './src/screens/WelcomeScreenForDancer';
+import WelcomeScreenForDj from './src/screens/WelcomeScreenForDj';
 import WelcomeScreenForUser from './src/screens/WelcomeScreenForUser';
+
 
 const Stack = createStackNavigator();
 
@@ -60,9 +64,11 @@ const App = () => {
           <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
           {/* WELCOME SCREEN */}
           <Stack.Screen name="WelcomeScreenForUser"component={WelcomeScreenForUser}/>
-          <Stack.Screen name="WelcomeScreenForDjDancer" component={WelcomeScreenForDjDancer}/>
+          <Stack.Screen name="WelcomeScreenForDancer" component={WelcomeScreenForDancer}/>
+          <Stack.Screen name="WelcomeScreenForDj" component={WelcomeScreenForDj}/>
           <Stack.Screen name="DancerListScreen" component={DancerListScreen} />
           <Stack.Screen name="DancerProfileScreen" component={DancerProfileScreen}/>
+          <Stack.Screen name="EditProfileScreen" component={EditProfileScreen}/>
           <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
           <Stack.Screen name="HistoryScreen" component={History} />
           {/* <Stack.Screen name="HomeScreen" component={DancerListScreen} /> */}
@@ -75,6 +81,7 @@ const App = () => {
           <Stack.Screen name="RequestSingleSongScreen" component={RequestSingleSongScreen}/>
           <Stack.Screen name="RequestPackSongScreen" component={RequestPackSongScreen}/>
           <Stack.Screen name="notificationScreen" component={Notification}/>
+          <Stack.Screen name="ChatScreen" component={Chat}/>
 
         </Stack.Navigator>
       </Provider>
