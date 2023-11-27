@@ -18,14 +18,6 @@ const WelcomeScreenForUser = ({navigation}) => {
         barStyle={'dark-content'}
       />
       <TopNavigation backBtn={true} title="Welcome" />
-      <BodyHeadTxt
-        style={{
-          width: '100%',
-          textAlign: 'center',
-          marginBottom: 30,
-        }}>
-        For Guest Login
-      </BodyHeadTxt>
       <View style={[Style.mainBackground, Style.mainBackgroundGray]}>
         <BodyHeadTxt
           style={{width: '100%', textAlign: 'center', marginBottom: 30}}>

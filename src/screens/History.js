@@ -2,12 +2,16 @@
 import { useRoute } from '@react-navigation/native';
 import React, { useState } from 'react';
 import {
+  Alert,
+  AlertIOS,
   Image,
+  Platform,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   TextInput,
+  ToastAndroid,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -35,6 +39,13 @@ const History = () => {
   const [query, setQuery] = useState('');
   const [isShowFilterOption, setIsShowFilterOption] = useState(true);
 
+  function notifyMessage(msg) {
+    if (Platform.OS === 'android') {
+      ToastAndroid.show(msg, ToastAndroid.SHORT);
+    } else {
+      AlertIOS.alert(msg);
+    }
+  }
   // Function to filter data based on the search query
   const filterData = query
     ? data.filter(item => item.name.toLowerCase().includes(query.toLowerCase()))
@@ -50,21 +61,36 @@ const History = () => {
       return {...prv, upcoming: false, completed: true};
     });
   };
-  const handlePress = () => {
-    const currentTime = new Date().getTime();
-    const doublePressDelay = 300; // Adjust this value to set the time frame for double click
-    if (currentTime - lastPress <= doublePressDelay) {
-      // Double click detected
-      console.log('Double click detected!');
-      // Perform your action for a double click here
+  const handleDoubleClick = () => {
+    // const currentTime = new Date().getTime();
+    // const doublePressDelay = 300; // Adjust this value to set the time frame for double click
+    // if (currentTime - lastPress <= doublePressDelay) {
+    //   // Double click detected
+    //   console.log('Double click detected!');
+    //   // Perform your action for a double click here
 
-      // Reset last press
-      setLastPress(0);
-    } else {
-      // Single click detected
-      console.log('Single click detected!');
-      setLastPress(currentTime);
-    }
+    //   // Reset last press
+    //   setLastPress(0);
+    // }
+    Alert.alert(
+      'Confirmation',
+      'Do you want to complete this request?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {
+          text: 'Confirm',
+          onPress: () => {
+            notifyMessage('SUCCESS');
+            setRequestStatus({completed: true, upcoming: false});
+          },
+        },
+      ],
+      {cancelable: false},
+    );
   };
   return (
     <View style={Style.wrpAll}>
@@ -153,7 +179,7 @@ const History = () => {
           {/* UPCOMING / COMPLETED END*/}
           {filterData.map((item, i) => (
             <TouchableOpacity
-              onPress={() => console.log('iam calling')}
+              onPress={() => console.log('i am calling')}
               key={i}>
               <ListItem
                 key={i}
@@ -166,7 +192,7 @@ const History = () => {
                 club="NYC Downtown, Tribeca"
                 isUser={role === 'user'}
                 // handlePress
-                handlePress={handlePress}
+                handleDoubleClick={handleDoubleClick}
                 // HISTORY
                 // request status page
                 requestStatusOfPage={requestStatus}

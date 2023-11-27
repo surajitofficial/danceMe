@@ -23,13 +23,17 @@ const DanceRequest = ({navigation}) => {
   const clientRole = useSelector(state => state.auth.clientRole);
   const disPatch = useDispatch();
 
+  const dancerObj = {name: 'alex', age: '23', about: "let'a dance"};
+  const djObj = {name: 'jon doe', age: '33', about: "let's sing a song"};
+  const userObj = {name: 'Nikki Bohnes', age: '23', about: 'I love dance & song '};
+
   const handleProfile = () => {
     if (clientRole === 'user') {
-      navigation.push('EditProfileScreen'); // TODO
+      navigation.navigate('EditProfileScreen', {info: userObj});
     } else if (clientRole === 'dj') {
-      navigation.push('EditProfileScreen');
+      navigation.navigate('EditProfileScreen', {info: djObj});
     } else if (clientRole === 'dancer') {
-      navigation.push('EditProfileScreen');
+      navigation.navigate('EditProfileScreen', {info: dancerObj});
     }
   };
 

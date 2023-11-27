@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { useRoute } from '@react-navigation/native';
 import React, { useState } from 'react';
 import {
   Image,
@@ -17,9 +18,11 @@ import TopNavigation from '../components/TopNavigation';
 import { ButtonStyle, InputStyled } from '../ui/Styled';
 
 const EditProfileScreen = () => {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [adress, setAdress] = useState('');
+  const route = useRoute();
+  const info = route?.params?.info;
+  const [name, setName] = useState(info?.name);
+  const [age, setAge] = useState(info?.age);
+  const [about, setAbout] = useState(info?.about);
   const clientRole = useSelector(state => state.auth.clientRole);
   const forUser = clientRole === 'user';
   const forDj = clientRole === 'dj';
@@ -27,7 +30,6 @@ const EditProfileScreen = () => {
   const handleSignIn = () => {
     // Handle sign-in functionality
   };
-
   const galleryImages = [
     require('../assets/images/img1.jpg'),
     require('../assets/images/img1.jpg'),
@@ -78,10 +80,10 @@ const EditProfileScreen = () => {
             <Text style={styles.label}>About</Text>
             <InputStyled
               placeholder="Type here..."
-              value={adress}
+              value={about}
               multiline={true}
               numberOfLines={40}
-              onChangeText={setAdress}
+              onChangeText={setAbout}
               style={{backgroundColor: '#EFEFF4'}}
               row={12}
             />
@@ -103,12 +105,14 @@ const EditProfileScreen = () => {
                 </TouchableOpacity>
               </View>
             )}
-            <View style={[styles.wrpInput]}>
-              <EditProfileDataRow title="Tap dance" value="Expert" />
-              <EditProfileDataRow title="Ballet" value="Well versed" />
-              <EditProfileDataRow title="Jazz dance" value="Beginner" />
-              <EditProfileDataRow title="Ballroom" value="Beginner" />
-            </View>
+            {!forUser && (
+              <View style={[styles.wrpInput]}>
+                <EditProfileDataRow title="Tap dance" value="Expert" />
+                <EditProfileDataRow title="Ballet" value="Well versed" />
+                <EditProfileDataRow title="Jazz dance" value="Beginner" />
+                <EditProfileDataRow title="Ballroom" value="Beginner" />
+              </View>
+            )}
             <View
               style={{
                 paddingVertical: 12,
@@ -131,7 +135,7 @@ const EditProfileScreen = () => {
             </View>
           </View>
 
-          {!forUser && (
+          {/* {false && (
             <View
               style={{
                 paddingVertical: 12,
@@ -148,7 +152,7 @@ const EditProfileScreen = () => {
               </TouchableOpacity>
             </View>
           )}
-          {!forUser && (
+          {false && (
             <View style={styles.wrpInput}>
               <InputStyled
                 placeholder="Song name"
@@ -161,7 +165,7 @@ const EditProfileScreen = () => {
                 style={[styles.hgtInput, {marginBottom: 7}]}
               />
             </View>
-          )}
+          )} */}
           <ButtonStyle
             onPress={handleSignIn}
             style={

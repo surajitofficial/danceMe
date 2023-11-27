@@ -26,13 +26,17 @@ const SongRequest = ({navigation}) => {
   const {params} = useRoute();
   const disPatch = useDispatch();
 
+  const dancerObj = {name: 'alex', age: '23', about: "let'a dance"};
+  const djObj = {name: 'jon doe', age: '33', about: "let's sing a song"};
+  const userObj = {name: 'Nikki Bohne', age: '21', about: 'I love dance & song '};
+
   const handleProfile = () => {
     if (clientRole === 'user') {
-      navigation.push('EditProfileScreen');
+      navigation.navigate('EditProfileScreen', {info: userObj});
     } else if (clientRole === 'dj') {
-      navigation.push('EditProfileScreen');
+      navigation.navigate('EditProfileScreen', {info: djObj});
     } else if (clientRole === 'dancer') {
-      navigation.push('EditProfileScreen');
+      navigation.navigate('EditProfileScreen', {info: dancerObj});
     }
   };
 

@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import IconBox from 'react-native-vector-icons/Ionicons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setClientRole } from '../redux/slice/authSlice';
 import { Style } from '../style/Style';
@@ -19,7 +20,7 @@ import { BodyHeadTxt, ButtonStyle, InputStyled, TopSubText } from '../ui/Styled'
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(true);
+  const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -85,7 +86,6 @@ const SignInScreen = ({navigation}) => {
   const handleRememberMe = () => {
     setRememberMe(!rememberMe);
   };
-
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -156,9 +156,9 @@ const SignInScreen = ({navigation}) => {
             alignItems: 'center',
           }}>
           {rememberMe ? (
-            <Icon name="check" size={20} color="#D9246D" />
+            <IconBox name="checkbox-outline" size={20} color="#D9246D" />
           ) : (
-            <Icon name="check" size={20} color="#000" />
+            <IconBox name="square-outline" size={20} color="#000" />
           )}
           <Text style={{marginLeft: 10}}>Remember me</Text>
         </TouchableOpacity>

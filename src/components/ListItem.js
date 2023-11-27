@@ -41,8 +41,8 @@ const ListItem = ({
   songReq,
   handleDancePayment,
   handleSongPayment,
-  // handlePress
-  handlePress,
+  // handleDoubleClick
+  handleDoubleClick,
   // request status page
   requestStatusOfPage,
 }) => {
@@ -62,6 +62,9 @@ const ListItem = ({
     }
     if (dancerProfileNavigationFun) {
       dancerProfileNavigationFun();
+    }
+    if (handleDoubleClick) {
+      handleDoubleClick();
     }
   };
 
@@ -109,7 +112,7 @@ const ListItem = ({
                 styles.font12,
                 screen === 'history' ? {color: '#D9246D'} : {color: '#000'},
               ]}>
-              <Text style={{color: '#8A8A8F'}}>Duration: </Text> {duration}
+              <Text style={{color: '#8A8A8F'}}>Duration: </Text> {duration}hr
             </Text>
           )}
           {hrs && <Text style={styles.font10}>Min {hrs} hr</Text>}

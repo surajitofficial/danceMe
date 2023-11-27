@@ -4,7 +4,7 @@ import { StatusBar, Text, View } from 'react-native';
 
 import TopNavigation from '../components/TopNavigation';
 import { Style } from '../style/Style';
-import { BodyHeadTxt, ButtonStyle, DjButtonStyle } from '../ui/Styled';
+import { BodyHeadTxt, ButtonStyle } from '../ui/Styled';
 
 const WelcomeScreenForDancer = ({navigation}) => {
   return (
@@ -15,9 +15,6 @@ const WelcomeScreenForDancer = ({navigation}) => {
         barStyle={'dark-content'}
       />
       <TopNavigation backBtn={true} title="Welcome" />
-      <BodyHeadTxt style={{width: '100%', textAlign: 'center'}}>
-        For dancers login
-      </BodyHeadTxt>
       <View style={[Style.mainBackground, Style.mainBackgroundGray]}>
         <BodyHeadTxt
           style={{width: '100%', textAlign: 'center', marginBottom: 30}}>
@@ -31,13 +28,13 @@ const WelcomeScreenForDancer = ({navigation}) => {
           </Text>
         </ButtonStyle>
 
-        <DjButtonStyle
+        {/* <DjButtonStyle
           onPress={() => navigation.push('SongRequest')}
           style={{height: 70}}>
           <Text style={{color: 'white', textAlign: 'center', fontSize: 15}}>
             Guest
           </Text>
-        </DjButtonStyle>
+        </DjButtonStyle> */}
 
         {/* <TouchableOpacity
           style={[Style.faceBookWrp, {height: 70}]}
