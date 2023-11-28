@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { useRoute } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   AlertIOS,
   FlatList,
@@ -17,26 +17,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import SongRequestList from '../components/SongReqList';
 import { setSongPayment, setSongReq } from '../redux/slice/authSlice';
 import { Style } from '../style/Style';
+import { getData } from '../utility/asyncStore';
 
 const SongRequest = ({navigation}) => {
   const songReq = useSelector(state => state.auth.songReq);
   const songPayment = useSelector(state => state.auth.songPayment);
   const clientRole = useSelector(state => state.auth.clientRole);
-
   const {params} = useRoute();
   const disPatch = useDispatch();
+  const [profileInfo, setProfileInfo] = useState({});
 
-  const dancerObj = {name: 'alex', age: '23', about: "let'a dance"};
-  const djObj = {name: 'jon doe', age: '33', about: "let's sing a song"};
-  const userObj = {name: 'Nikki Bohne', age: '21', about: 'I love dance & song '};
+  useEffect(() => {
+    const fetchFun = async () => {
+      const result = await getData(`${clientRole}s`);
+      setProfileInfo(result[1]);
+    };
+    fetchFun();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   const handleProfile = () => {
     if (clientRole === 'user') {
-      navigation.navigate('EditProfileScreen', {info: userObj});
+      navigation.navigate('EditProfileScreen', {info: profileInfo});
     } else if (clientRole === 'dj') {
-      navigation.navigate('EditProfileScreen', {info: djObj});
+      navigation.navigate('EditProfileScreen', {info: profileInfo});
     } else if (clientRole === 'dancer') {
-      navigation.navigate('EditProfileScreen', {info: dancerObj});
+      navigation.navigate('EditProfileScreen', {info: profileInfo});
     }
   };
 

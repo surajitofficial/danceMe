@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   AlertIOS,
   Image,
@@ -16,24 +16,35 @@ import { useDispatch, useSelector } from 'react-redux';
 import DancerRequestList from '../components/DancerReqList';
 import { setDancePayment, setDanceReq } from '../redux/slice/authSlice';
 import { Style } from '../style/Style';
+import { getData } from '../utility/asyncStore';
 
 const DanceRequest = ({navigation}) => {
+  const [profileInfo, setProfileInfo] = useState({});
   const danceReqState = useSelector(state => state.auth.danceReq);
   const dancePaymentState = useSelector(state => state.auth.dancePayment);
   const clientRole = useSelector(state => state.auth.clientRole);
   const disPatch = useDispatch();
 
-  const dancerObj = {name: 'alex', age: '23', about: "let'a dance"};
-  const djObj = {name: 'jon doe', age: '33', about: "let's sing a song"};
-  const userObj = {name: 'Nikki Bohnes', age: '23', about: 'I love dance & song '};
+  useEffect(() => {
+    const fetchFun = async () => {
+      const result = await getData(`${clientRole}s`);
+      setProfileInfo(result[1]);
+    };
+    fetchFun();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // const dancerObj = {name: 'alex', age: '23', about: "let'a dance"};
+  // const djObj = {name: 'jon doe', age: '33', about: "let's sing a song"};
+  // const userObj = {name: 'Nikki ',age: '23',about: 'I love dance & song ',};
 
   const handleProfile = () => {
     if (clientRole === 'user') {
-      navigation.navigate('EditProfileScreen', {info: userObj});
+      navigation.navigate('EditProfileScreen', {info: profileInfo});
     } else if (clientRole === 'dj') {
-      navigation.navigate('EditProfileScreen', {info: djObj});
+      navigation.navigate('EditProfileScreen', {info: profileInfo});
     } else if (clientRole === 'dancer') {
-      navigation.navigate('EditProfileScreen', {info: dancerObj});
+      navigation.navigate('EditProfileScreen', {info: profileInfo});
     }
   };
 

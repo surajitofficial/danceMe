@@ -16,6 +16,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setClientRole } from '../redux/slice/authSlice';
 import { Style } from '../style/Style';
 import { BodyHeadTxt, ButtonStyle, InputStyled, TopSubText } from '../ui/Styled';
+import {
+  dancerAsyncStorage,
+  djAsyncStorage,
+  storeData,
+  userAsyncStorage,
+} from '../utility/asyncStore';
 
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -67,11 +73,14 @@ const SignInScreen = ({navigation}) => {
         setCustomError(false);
         if (email === 'user@test.com') {
           disPatch(setClientRole(email.split('@')[0]));
+          storeData('users', userAsyncStorage);
           navigation.push('WelcomeScreenForUser');
         } else if (email === 'dancer@test.com') {
+          storeData('dancers', dancerAsyncStorage);
           disPatch(setClientRole(email.split('@')[0]));
           navigation.push('WelcomeScreenForDancer');
         } else if (email === 'dj@test.com') {
+          storeData('djs', djAsyncStorage);
           disPatch(setClientRole(email.split('@')[0]));
           navigation.push('WelcomeScreenForDj');
         } else {

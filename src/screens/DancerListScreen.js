@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { } from 'react-native-gesture-handler';
 import ListItem from '../components/ListItem';
+import PopUp from '../components/PopUp';
 import TopNavigation from '../components/TopNavigation';
 import { Style } from '../style/Style';
 
@@ -24,7 +25,7 @@ const DancerList = ({navigation}) => {
   const data = [
     {id: '1', danceType: 'Hip-Hop', name: 'Nikki Bohne'},
     {id: '2', danceType: 'Classic', name: 'Alex'},
-    {id: '3', danceType: 'Slow-Motion', name: 'Mark'},
+    {id: '3', danceType: 'Salsa', name: 'Mark'},
   ];
   const key = filterKey.danceType ? 'danceType' : 'name';
   // Function to filter data based on the search query
@@ -40,6 +41,7 @@ const DancerList = ({navigation}) => {
     if (query) {
       setIsShowFilterOption(true);
     }
+    showFilterOption && setShowFilterOPtion(false);
     setQuery(text);
   };
   return (
@@ -74,29 +76,34 @@ const DancerList = ({navigation}) => {
           </View>
           {/* FILTER TYPES  */}
           {showFilterOption && (
-            <View style={styles.optionChild}>
-              <Text
-                style={styles.optionChildTxt}
-                onPress={() => {
-                  setFilterKey(prv => (prv = {name: false, danceType: true}));
-                  setShowFilterOPtion(false);
-                  setIsShowFilterOption(true);
-                }}>
-                {' '}
-                Dance Type{' '}
-              </Text>
-              <View style={styles.horizontalLine} />
-              <Text
-                style={styles.optionChildTxt}
-                onPress={() => {
-                  setFilterKey(prv => (prv = {name: true, danceType: false}));
-                  setShowFilterOPtion(false);
-                  setIsShowFilterOption(true);
-                }}>
-                {' '}
-                Name{' '}
-              </Text>
-            </View>
+            <PopUp
+              onClose={() => setShowFilterOPtion(false)}
+              setQuery={setQuery}
+              setShowFilterOPtion={setShowFilterOPtion}
+            />
+            // <View style={styles.optionChild}>
+            //   <Text
+            //     style={styles.optionChildTxt}
+            //     onPress={() => {
+            //       setFilterKey(prv => (prv = {name: false, danceType: true}));
+            //       setShowFilterOPtion(false);
+            //       setIsShowFilterOption(true);
+            //     }}>
+            //     {' '}
+            //     Dance Type{' '}
+            //   </Text>
+            //   <View style={styles.horizontalLine} />
+            //   <Text
+            //     style={styles.optionChildTxt}
+            //     onPress={() => {
+            //       setFilterKey(prv => (prv = {name: true, danceType: false}));
+            //       setShowFilterOPtion(false);
+            //       setIsShowFilterOption(true);
+            //     }}>
+            //     {' '}
+            //     Name{' '}
+            //   </Text>
+            // </View>
           )}
           {query && isShowFilterOption && (
             <View style={styles.resultsContainer}>

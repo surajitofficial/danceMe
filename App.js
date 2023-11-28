@@ -66,12 +66,12 @@ const App = () => {
           <Stack.Screen name="WelcomeScreenForUser"component={WelcomeScreenForUser}/>
           <Stack.Screen name="WelcomeScreenForDancer" component={WelcomeScreenForDancer}/>
           <Stack.Screen name="WelcomeScreenForDj" component={WelcomeScreenForDj}/>
-          <Stack.Screen name="DancerListScreen" component={DancerListScreen} />
           <Stack.Screen name="DancerProfileScreen" component={DancerProfileScreen}/>
           <Stack.Screen name="EditProfileScreen" component={EditProfileScreen}/>
           <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
           <Stack.Screen name="HistoryScreen" component={History} />
-          {/* <Stack.Screen name="HomeScreen" component={DancerListScreen} /> */}
+          {/* LIST DANCER / DJ */}
+          <Stack.Screen name="DancerListScreen" component={DancerListScreen} />
           <Stack.Screen name="DjListScreen" component={DjList} />
           <Stack.Screen name="DjProfileScreen" component={DjProfile} />
           {/* REQUESTED SCREEN */}
