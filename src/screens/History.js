@@ -108,8 +108,8 @@ const History = () => {
       <ScrollView>
         <View style={[Style.mainBackground, Style.mainBackgroundGray]}>
           {/* SEARCH START*/}
-          <View style={styles.searchbox}>
-            {/* search icon */}
+          
+          {/* <View style={styles.searchbox}>
             <TouchableOpacity>
               <Image source={require('../assets/images/search.png')} />
             </TouchableOpacity>
@@ -123,16 +123,14 @@ const History = () => {
               }}
               style={{flex: 1}}
               placeholder={`${
-                // FOR SONG REQUEST
                 params?.songHistory ? 'Search requestor name' : ''
-                // FOR DANCER REQUEST
               } ${params?.dancersHistory ? 'Search requestor name' : ''}`}
             />
-            {/* filter icon */}
             <TouchableOpacity>
               <Image source={require('../assets/images/filter.png')} />
             </TouchableOpacity>
-          </View>
+          </View> */}
+
           {isShowFilterOption && query && (
             <View style={styles.resultsContainer}>
               {filterData.map((item, index) => (

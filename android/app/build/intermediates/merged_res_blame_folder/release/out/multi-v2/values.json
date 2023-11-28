@@ -4,23 +4,6 @@
             "outputFile": "com.danceme.app-mergeReleaseResources-33:/values/values.xml",
             "map": [
                 {
-                    "source": "D:\\NCR\\DanceMe\\android\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "44",
-                        "endOffsets": "56"
-                    },
-                    "to": {
-                        "startLines": "1879",
-                        "startColumns": "4",
-                        "startOffsets": "125566",
-                        "endColumns": "44",
-                        "endOffsets": "125606"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Surajit-Das\\.gradle\\caches\\transforms-3\\f94ce445049fe5108bae0ffb11c13baa\\transformed\\jetified-drawee-2.5.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,141",
@@ -57,6 +40,25 @@
                     }
                 },
                 {
+                    "source": "D:\\NCR\\Git_28-11-2023\\danceMe\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "273"
+                    },
+                    "to": {
+                        "startLines": "2103",
+                        "startColumns": "4",
+                        "startOffsets": "152780",
+                        "endLines": "2106",
+                        "endColumns": "12",
+                        "endOffsets": "152958"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Surajit-Das\\.gradle\\caches\\transforms-3\\aff50e2a9b3c13dbf5f6a2bb255f515d\\transformed\\jetified-appcompat-resources-1.5.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,18,24,34,50",
@@ -90,6 +92,23 @@
                         "startOffsets": "125483",
                         "endColumns": "82",
                         "endOffsets": "125561"
+                    }
+                },
+                {
+                    "source": "D:\\NCR\\Git_28-11-2023\\danceMe\\android\\app\\build\\generated\\res\\resValues\\release\\values\\gradleResValues.xml",
+                    "from": {
+                        "startLines": "6,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "159,265",
+                        "endColumns": "63,68",
+                        "endOffsets": "218,329"
+                    },
+                    "to": {
+                        "startLines": "1842,1843",
+                        "startColumns": "4,4",
+                        "startOffsets": "122964,123028",
+                        "endColumns": "63,68",
+                        "endOffsets": "123023,123092"
                     }
                 },
                 {
@@ -351,23 +370,6 @@
                     }
                 },
                 {
-                    "source": "D:\\NCR\\DanceMe\\android\\app\\build\\generated\\res\\resValues\\release\\values\\gradleResValues.xml",
-                    "from": {
-                        "startLines": "6,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "159,265",
-                        "endColumns": "63,68",
-                        "endOffsets": "218,329"
-                    },
-                    "to": {
-                        "startLines": "1842,1843",
-                        "startColumns": "4,4",
-                        "startOffsets": "122964,123028",
-                        "endColumns": "63,68",
-                        "endOffsets": "123023,123092"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Surajit-Das\\.gradle\\caches\\transforms-3\\7b0146455a7d49dd104ba0e527a802e7\\transformed\\jetified-react-android-0.72.6-release\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,80,84,88,91,95,99,102,105,106,107,116,123,130,133,136,139,145",
@@ -406,22 +408,20 @@
                     }
                 },
                 {
-                    "source": "D:\\NCR\\DanceMe\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\NCR\\Git_28-11-2023\\danceMe\\android\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "3",
+                        "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "267"
+                        "startOffsets": "17",
+                        "endColumns": "44",
+                        "endOffsets": "57"
                     },
                     "to": {
-                        "startLines": "2103",
+                        "startLines": "1879",
                         "startColumns": "4",
-                        "startOffsets": "152780",
-                        "endLines": "2106",
-                        "endColumns": "12",
-                        "endOffsets": "152958"
+                        "startOffsets": "125566",
+                        "endColumns": "44",
+                        "endOffsets": "125606"
                     }
                 },
                 {

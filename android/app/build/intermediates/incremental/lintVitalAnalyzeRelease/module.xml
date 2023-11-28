@@ -1,6 +1,6 @@
 <lint-module
     format="1"
-    dir="D:\NCR\DanceMe\android\app"
+    dir="D:\NCR\Git_28-11-2023\danceMe\android\app"
     name=":app"
     type="APP"
     maven="DanceMe:app:"

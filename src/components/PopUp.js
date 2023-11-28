@@ -1,11 +1,11 @@
-/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SmallButtonStyle } from '../ui/Styled';
 
-const PopUp = ({onClose, setQuery, setShowFilterOPtion}) => {
-  const [danceOption, setDanceOption] = useState({salsa: true, hipHop: false});
+const PopUp = ({ onClose, setQuery, setShowFilterOption }) => {
+  const [danceOption, setDanceOption] = useState({ salsa: true, hipHop: false });
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -18,59 +18,60 @@ const PopUp = ({onClose, setQuery, setShowFilterOPtion}) => {
 
           {/* Close button */}
           <TouchableOpacity onPress={onClose} style={styles.closeBtn}>
-            {/* <Icone style={styles.closeText} name="Close" /> */}
-            <Icon name={'close'} color={'#fff'} size={23} />
+            <Icon name={'close'} color={'#10132D'} size={23} />
           </TouchableOpacity>
         </View>
+
         {/* Second and third rows */}
         <View>
-          <Text style={{color: '#fff'}}>Dance type</Text>
+          <Text style={{ color: '#10132D', fontFamily:"Plus Jakarta Sans" }}>Dance type</Text>
           <View style={styles.row2}>
             <SmallButtonStyle
               style={[
-                {marginTop: 12},
+                { marginTop: 12 },
                 danceOption.salsa
-                  ? {backgroundColor: '#d9246d'}
-                  : {backgroundColor: '#e6e1e1'},
+                  ? { backgroundColor: '#d9246d' }
+                  : { backgroundColor: '#e6e1e1' },
               ]}>
               <Text
                 onPress={() => {
-                  setDanceOption({hipHop: false, salsa: true});
+                  setDanceOption({ hipHop: false, salsa: true });
                 }}
                 style={[
-                  danceOption.salsa ? {color: '#fff'} : {color: '#d9246d'},
+                  danceOption.salsa ? { color: '#fff' } : { color: '#d9246d' },
                 ]}>
                 Salsa
               </Text>
             </SmallButtonStyle>
             <SmallButtonStyle
               style={[
-                {marginTop: 12},
+                { marginTop: 12 },
                 danceOption.hipHop
-                  ? {backgroundColor: '#d9246d'}
-                  : {backgroundColor: '#e6e1e1'},
+                  ? { backgroundColor: '#d9246d' }
+                  : { backgroundColor: '#e6e1e1' },
               ]}>
               <Text
                 onPress={() => {
-                  setDanceOption({hipHop: true, salsa: false});
+                  setDanceOption({ hipHop: true, salsa: false });
                 }}
                 style={[
-                  danceOption.hipHop ? {color: '#fff'} : {color: '#d9246d'},
+                  danceOption.hipHop ? { color: '#fff' } : { color: '#d9246d' },
                 ]}>
                 Hip Hop
               </Text>
             </SmallButtonStyle>
           </View>
         </View>
+
         {/* Third Row */}
         <TouchableOpacity
           onPress={() => {
             danceOption.salsa && setQuery('Salsa');
             danceOption.hipHop && setQuery('Hip-Hop');
-            setShowFilterOPtion(false);
+            setShowFilterOption(false);
           }}
           style={styles.fullWidthButton}>
-          <Text style={{color: '#fff', fontWeight: 'bold'}}>Apply</Text>
+          <Text style={{ color: '#fff', fontWeight: 'bold' }}>Apply</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -85,16 +86,21 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     zIndex: 10,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
   },
   box: {
     width: 300,
     height: 200,
-    backgroundColor: 'lightgray',
+    backgroundColor: '#FFFFFF', // Background color set to white
     borderRadius: 10,
     padding: 10,
     flex: 1,
     justifyContent: 'space-between',
-    // alignItems: 'center',
+    shadowColor: '#000', // Shadow color
+    shadowOffset: { width: 0, height: 2 }, // Shadow offset
+    shadowOpacity: 1, // Shadow opacity
+    shadowRadius: 20, // Shadow radius
+    elevation: 5, // For Android shadow effect
   },
   row: {
     flexDirection: 'row',
@@ -117,15 +123,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#10132D',
   },
   closeBtn: {
     flex: 1,
     alignItems: 'flex-end',
-  },
-  closeText: {
-    color: 'blue',
-    fontWeight: 'bold',
   },
   fullWidthButton: {
     alignItems: 'center',
@@ -135,7 +137,6 @@ const styles = StyleSheet.create({
     height: 40,
     marginBottom: 5,
   },
-  // Add styles for second and third row as needed
 });
 
 export default PopUp;
