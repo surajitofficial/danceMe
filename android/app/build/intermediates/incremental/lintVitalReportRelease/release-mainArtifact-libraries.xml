@@ -26,10 +26,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="D:\NCR\DanceMe\android@@:react-native-async-storage_async-storage::release"
-      jars="D:\NCR\DanceMe\node_modules\@react-native-async-storage\async-storage\android\build\.transforms\7333bd407091c343a784cb9c9225ecf1\transformed\out\jars\classes.jar;D:\NCR\DanceMe\node_modules\@react-native-async-storage\async-storage\android\build\.transforms\7333bd407091c343a784cb9c9225ecf1\transformed\out\jars\libs\R.jar"
+      name="D:\NCR\Git_28-11-2023\danceMe\android@@:react-native-async-storage_async-storage::release"
+      jars="D:\NCR\Git_28-11-2023\danceMe\node_modules\@react-native-async-storage\async-storage\android\build\.transforms\708adb6b2ca1080691c0656468a1d4a2\transformed\out\jars\classes.jar;D:\NCR\Git_28-11-2023\danceMe\node_modules\@react-native-async-storage\async-storage\android\build\.transforms\708adb6b2ca1080691c0656468a1d4a2\transformed\out\jars\libs\R.jar"
       resolved="DanceMe:react-native-async-storage_async-storage:unspecified"
-      folder="D:\NCR\DanceMe\node_modules\@react-native-async-storage\async-storage\android\build\.transforms\7333bd407091c343a784cb9c9225ecf1\transformed\out"
+      folder="D:\NCR\Git_28-11-2023\danceMe\node_modules\@react-native-async-storage\async-storage\android\build\.transforms\708adb6b2ca1080691c0656468a1d4a2\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -39,10 +39,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="D:\NCR\DanceMe\android@@:react-native-gesture-handler::release"
-      jars="D:\NCR\DanceMe\node_modules\react-native-gesture-handler\android\build\.transforms\ba1b5e983479cbb7c38bf0a24da00961\transformed\out\jars\classes.jar;D:\NCR\DanceMe\node_modules\react-native-gesture-handler\android\build\.transforms\ba1b5e983479cbb7c38bf0a24da00961\transformed\out\jars\libs\R.jar"
+      name="D:\NCR\Git_28-11-2023\danceMe\android@@:react-native-gesture-handler::release"
+      jars="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-gesture-handler\android\build\.transforms\be8df60e8cd11e0fc6b08eb2b14bd7b3\transformed\out\jars\classes.jar;D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-gesture-handler\android\build\.transforms\be8df60e8cd11e0fc6b08eb2b14bd7b3\transformed\out\jars\libs\R.jar"
       resolved="DanceMe:react-native-gesture-handler:unspecified"
-      folder="D:\NCR\DanceMe\node_modules\react-native-gesture-handler\android\build\.transforms\ba1b5e983479cbb7c38bf0a24da00961\transformed\out"
+      folder="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-gesture-handler\android\build\.transforms\be8df60e8cd11e0fc6b08eb2b14bd7b3\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -52,10 +52,23 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="D:\NCR\DanceMe\android@@:react-native-safe-area-context::release"
-      jars="D:\NCR\DanceMe\node_modules\react-native-safe-area-context\android\build\.transforms\42fa6f5c64f0ac6cbd14b6c94ec7418f\transformed\out\jars\classes.jar;D:\NCR\DanceMe\node_modules\react-native-safe-area-context\android\build\.transforms\42fa6f5c64f0ac6cbd14b6c94ec7418f\transformed\out\jars\libs\R.jar"
+      name="D:\NCR\Git_28-11-2023\danceMe\android@@:react-native-image-picker::release"
+      jars="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-image-picker\android\build\.transforms\7613032882adc3a535cdd00da0459878\transformed\out\jars\classes.jar;D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-image-picker\android\build\.transforms\7613032882adc3a535cdd00da0459878\transformed\out\jars\libs\R.jar"
+      resolved="DanceMe:react-native-image-picker:unspecified"
+      folder="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-image-picker\android\build\.transforms\7613032882adc3a535cdd00da0459878\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="D:\NCR\Git_28-11-2023\danceMe\android@@:react-native-safe-area-context::release"
+      jars="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-safe-area-context\android\build\.transforms\437dbfc9ff5083691f12aff37956810d\transformed\out\jars\classes.jar;D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-safe-area-context\android\build\.transforms\437dbfc9ff5083691f12aff37956810d\transformed\out\jars\libs\R.jar"
       resolved="DanceMe:react-native-safe-area-context:unspecified"
-      folder="D:\NCR\DanceMe\node_modules\react-native-safe-area-context\android\build\.transforms\42fa6f5c64f0ac6cbd14b6c94ec7418f\transformed\out"
+      folder="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-safe-area-context\android\build\.transforms\437dbfc9ff5083691f12aff37956810d\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -65,10 +78,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="D:\NCR\DanceMe\android@@:react-native-screens::release"
-      jars="D:\NCR\DanceMe\node_modules\react-native-screens\android\build\.transforms\1f5a15ae7a0121100ca376b2acad9aa7\transformed\out\jars\classes.jar;D:\NCR\DanceMe\node_modules\react-native-screens\android\build\.transforms\1f5a15ae7a0121100ca376b2acad9aa7\transformed\out\jars\libs\R.jar"
+      name="D:\NCR\Git_28-11-2023\danceMe\android@@:react-native-screens::release"
+      jars="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-screens\android\build\.transforms\e560af98eb8c244ab6de7c110607ca7b\transformed\out\jars\classes.jar;D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-screens\android\build\.transforms\e560af98eb8c244ab6de7c110607ca7b\transformed\out\jars\libs\R.jar"
       resolved="DanceMe:react-native-screens:unspecified"
-      folder="D:\NCR\DanceMe\node_modules\react-native-screens\android\build\.transforms\1f5a15ae7a0121100ca376b2acad9aa7\transformed\out"
+      folder="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-screens\android\build\.transforms\e560af98eb8c244ab6de7c110607ca7b\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -78,10 +91,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="D:\NCR\DanceMe\android@@:react-native-vector-icons::release"
-      jars="D:\NCR\DanceMe\node_modules\react-native-vector-icons\android\build\.transforms\4ad9f7dbd394f7b5eb5e2cba5b869a34\transformed\out\jars\classes.jar;D:\NCR\DanceMe\node_modules\react-native-vector-icons\android\build\.transforms\4ad9f7dbd394f7b5eb5e2cba5b869a34\transformed\out\jars\libs\R.jar"
+      name="D:\NCR\Git_28-11-2023\danceMe\android@@:react-native-vector-icons::release"
+      jars="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-vector-icons\android\build\.transforms\7e1ad6bb48b4789c04a7cce0313c99ad\transformed\out\jars\classes.jar;D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-vector-icons\android\build\.transforms\7e1ad6bb48b4789c04a7cce0313c99ad\transformed\out\jars\libs\R.jar"
       resolved="DanceMe:react-native-vector-icons:unspecified"
-      folder="D:\NCR\DanceMe\node_modules\react-native-vector-icons\android\build\.transforms\4ad9f7dbd394f7b5eb5e2cba5b869a34\transformed\out"
+      folder="D:\NCR\Git_28-11-2023\danceMe\node_modules\react-native-vector-icons\android\build\.transforms\7e1ad6bb48b4789c04a7cce0313c99ad\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -842,6 +855,19 @@
       jars="C:\Users\Surajit-Das\.gradle\caches\transforms-3\1b2a468e511b40252f50abd3e2702db9\transformed\legacy-support-core-utils-1.0.0\jars\classes.jar"
       resolved="androidx.legacy:legacy-support-core-utils:1.0.0"
       folder="C:\Users\Surajit-Das\.gradle\caches\transforms-3\1b2a468e511b40252f50abd3e2702db9\transformed\legacy-support-core-utils-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.exifinterface:exifinterface:1.3.3@aar"
+      jars="C:\Users\Surajit-Das\.gradle\caches\transforms-3\0eba2a16e2a1cb3e4265e0366e9b27e0\transformed\exifinterface-1.3.3\jars\classes.jar"
+      resolved="androidx.exifinterface:exifinterface:1.3.3"
+      folder="C:\Users\Surajit-Das\.gradle\caches\transforms-3\0eba2a16e2a1cb3e4265e0366e9b27e0\transformed\exifinterface-1.3.3"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

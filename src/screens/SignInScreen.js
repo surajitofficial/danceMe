@@ -11,9 +11,17 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useSelector } from 'react-redux';
+import IconBox from 'react-native-vector-icons/Ionicons';
+import { useDispatch, useSelector } from 'react-redux';
+import { setClientRole } from '../redux/slice/authSlice';
 import { Style } from '../style/Style';
 import { BodyHeadTxt, ButtonStyle, InputStyled, TopSubText } from '../ui/Styled';
+import {
+  dancerAsyncStorage,
+  djAsyncStorage,
+  storeData,
+  userAsyncStorage,
+} from '../utility/asyncStore';
 
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -22,8 +30,10 @@ const SignInScreen = ({navigation}) => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [customError, setCustomError] = useState(false);
   // redux hooks
   const user = useSelector(state => state.auth.user);
+  const disPatch = useDispatch();
   // From validation
   const validateForm = () => {
     let formErrors = {};
@@ -60,8 +70,22 @@ const SignInScreen = ({navigation}) => {
         await waitTwoSeconds();
         setIsError(false);
         setIsLoading(false);
-        navigation.push('WelcomeScreen');
-        console.log('SUCCES');
+        setCustomError(false);
+        if (email === 'user@test.com') {
+          disPatch(setClientRole(email.split('@')[0]));
+          storeData('users', userAsyncStorage);
+          navigation.push('WelcomeScreenForUser');
+        } else if (email === 'dancer@test.com') {
+          storeData('dancers', dancerAsyncStorage);
+          disPatch(setClientRole(email.split('@')[0]));
+          navigation.push('WelcomeScreenForDancer');
+        } else if (email === 'dj@test.com') {
+          storeData('djs', djAsyncStorage);
+          disPatch(setClientRole(email.split('@')[0]));
+          navigation.push('WelcomeScreenForDj');
+        } else {
+          setCustomError(true);
+        }
       } catch (error) {
         setIsError(true);
       }
@@ -71,7 +95,6 @@ const SignInScreen = ({navigation}) => {
   const handleRememberMe = () => {
     setRememberMe(!rememberMe);
   };
-
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -132,7 +155,6 @@ const SignInScreen = ({navigation}) => {
           marginTop: 20,
           justifyContent: 'space-between',
           alignContent: 'space-between',
-
           width: '92%',
         }}>
         <TouchableOpacity
@@ -143,11 +165,11 @@ const SignInScreen = ({navigation}) => {
             alignItems: 'center',
           }}>
           {rememberMe ? (
-            <Icon name="check" size={20} color="#D9246D" />
+            <IconBox name="checkbox-outline" size={20} color="#D9246D" />
           ) : (
-            <Icon name="check" size={20} color="#000" />
+            <IconBox name="square-outline" size={20} color="#000" />
           )}
-          <Text style={{marginLeft: 10}}>Remember me</Text>
+          <Text style={[{marginLeft: 10}, rememberMe && {color:'#D9246D'}]}>Remember me</Text>
         </TouchableOpacity>
 
         <Text style={{marginLeft: 10, color: '#D9246D'}}>Forgot password</Text>
@@ -173,7 +195,16 @@ const SignInScreen = ({navigation}) => {
           {isLoading ? 'wait...' : 'Sign In'}
         </Text>
       </ButtonStyle>
-
+      {customError && (
+        <Text
+          style={{
+            color: 'red',
+            marginHorizontal: 'auto',
+            marginVertical: 8,
+          }}>
+          {'Email not accepted'}
+        </Text>
+      )}
       <TouchableOpacity
         style={Style.faceBookWrp}
         onPress={() => {

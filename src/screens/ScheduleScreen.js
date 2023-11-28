@@ -85,10 +85,10 @@ const ScheduleScreen = ({navigation}) => {
       };
       try {
         await waitTwoSeconds();
-        notifyMessage('Payment success.');
+        notifyMessage('SUCCESS.');
         setIsError(false);
         setIsLoading(false);
-        navigation.push('HistoryScreen');
+        navigation.push('DanceRequestScreen');
         console.log({
           selectedDate,
           startTime: selectedTime,
@@ -117,7 +117,10 @@ const ScheduleScreen = ({navigation}) => {
           <Text style={styles.headerText}>You are booking Nikki Bohne</Text>
         </View>
         <Calendar
-          style={errors.selectedDate && styles.calenderError}
+          style={[
+            errors.selectedDate && styles.calenderError,
+            !selectedDate && styles.calenderError,
+          ]}
           // ... additional props and styling for Calendar
           // Example prop:
           onDayPress={day => {
@@ -127,11 +130,14 @@ const ScheduleScreen = ({navigation}) => {
             [selectedDate]: {
               selected: true,
               disableTouchEvent: true,
-              selectedDotColor: 'orange',
+              selectedDotColor: 'green',
+              selectedColor: 'green',
             },
           }}
         />
+        {/* START TIME */}
         <View style={styles.danceTypeSection}>
+          {/* START ERROR MSG */}
           <View
             style={{
               display: 'flex',
@@ -139,7 +145,6 @@ const ScheduleScreen = ({navigation}) => {
               alignItems: 'center',
             }}>
             <Text style={styles.headerText}>Start Time</Text>
-            {/* ERROR MSG */}
             {errors.selectedTime && (
               <Text
                 style={{
@@ -152,6 +157,7 @@ const ScheduleScreen = ({navigation}) => {
               </Text>
             )}
           </View>
+          {/* START TIME */}
           <View style={styles.startTimeOptions}>
             {['07:00 PM', '09:00 PM', '10:00 PM'].map((time, i) => (
               <TouchableOpacity
@@ -159,6 +165,7 @@ const ScheduleScreen = ({navigation}) => {
                 style={[
                   styles.durationButton,
                   selectedTime === time && styles.selectedDurationButton,
+                  !selectedTime && styles.errorBorder,
                 ]}
                 onPress={() => handleSelectTime(time)}>
                 <Text
@@ -173,7 +180,9 @@ const ScheduleScreen = ({navigation}) => {
           </View>
           {/* Add Time Picker or custom time selection components here */}
         </View>
+        {/* DURATION  */}
         <View style={styles.danceTypeSection}>
+          {/* ERROR MSG */}
           <View
             style={{
               display: 'flex',
@@ -181,7 +190,6 @@ const ScheduleScreen = ({navigation}) => {
               alignItems: 'center',
             }}>
             <Text style={styles.headerText}>Duration</Text>
-            {/* ERROR MSG */}
             {errors.selectedDuration && (
               <Text
                 style={{
@@ -194,6 +202,7 @@ const ScheduleScreen = ({navigation}) => {
               </Text>
             )}
           </View>
+          {/* DURATION TIME */}
           <View style={styles.durationOptions}>
             {['30m', '60m', '90m', '2h', '3h', '4h'].map(duration => (
               <TouchableOpacity
@@ -202,6 +211,7 @@ const ScheduleScreen = ({navigation}) => {
                   styles.durationButton,
                   selectedDuration === duration &&
                     styles.selectedDurationButton,
+                  !selectedDuration && styles.errorBorder,
                 ]}
                 onPress={() => handleSelectDuration(duration)}>
                 <Text
@@ -216,15 +226,20 @@ const ScheduleScreen = ({navigation}) => {
             ))}
           </View>
         </View>
+        {/* DANCE TYPE */}
         <View style={styles.danceTypeSection}>
           <Text style={styles.headerText}>Dance type</Text>
           <InputStyled
             onChangeText={handleDanceType}
             placeholder="Dance type"
             value={danceType}
-            style={styles.danceTypeText}
+            style={[
+              styles.danceTypeText,
+              danceType && styles.inputSuccessBorder,
+              !danceType && styles.inputErrorBorder,
+            ]}
           />
-          {/* ERROR MSG */}
+          {/* DANCE TYPE ERROR MSG */}
           {errors.danceType && (
             <Text
               style={{
@@ -240,7 +255,7 @@ const ScheduleScreen = ({navigation}) => {
         <View style={{alignItems: 'center', paddingBottom: 10}}>
           <ButtonStyle onPress={handleSubmit}>
             <Text style={styles.paymentButtonText}>
-              {isLoading ? 'sending...' : 'Make Payment'}
+              {isLoading ? 'sending...' : 'Send Request'}
             </Text>
           </ButtonStyle>
         </View>
@@ -254,7 +269,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red',
     height: 350,
-    borderRadius:10,
+    borderRadius: 10,
   },
   container: {
     flex: 1,
@@ -304,6 +319,23 @@ const styles = StyleSheet.create({
   selectedDurationButton: {
     // TODO
     // borderColor: '#D9246D',
+    borderColor: 'green',
+  },
+  errorBorder: {
+    // TODO
+    // borderColor: '#D9246D',
+    borderColor: 'red',
+  },
+  inputErrorBorder: {
+    // TODO
+    // borderColor: '#D9246D',
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  inputSuccessBorder: {
+    // TODO
+    // borderColor: '#D9246D',
+    borderWidth: 1,
     borderColor: 'green',
   },
   durationText: {

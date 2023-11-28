@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useSelector } from 'react-redux';
 import TopNavigation from '../components/TopNavigation';
 import { BodyHeadTxt, ButtonStyle, InputStyled } from '../ui/Styled';
 
@@ -20,7 +21,7 @@ const RequestSingleSongScreen = ({navigation}) => {
   const [vipRequest, setVipRequest] = useState(false);
   const [generalRequest, setGeneralRequest] = useState(false);
   const [errors, setErrors] = useState({});
-
+  const role = useSelector(state => state?.auth?.clientRole);
   // From validation
   const validateForm = () => {
     let formErrors = {};
@@ -48,7 +49,7 @@ const RequestSingleSongScreen = ({navigation}) => {
     const isValid = validateForm();
     if (isValid) {
       console.log({songCat, songName, singerNameType});
-      navigation.push('SongRequest');
+      navigation.push('SongRequest', {singleSong: true});
     }
   };
 

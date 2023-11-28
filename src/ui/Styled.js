@@ -87,7 +87,7 @@ export const SmallOutlineButtonStyle = styled.TouchableOpacity`
   justify-content: center;
   border-radius: 22.5px;
   border: 1px solid #d9246d;
-  
+
   padding: 0 18px;
 `;
 //background: #fff;
