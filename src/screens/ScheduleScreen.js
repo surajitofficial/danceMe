@@ -255,7 +255,7 @@ const ScheduleScreen = ({navigation}) => {
         <View style={{alignItems: 'center', paddingBottom: 10}}>
           <ButtonStyle onPress={handleSubmit}>
             <Text style={styles.paymentButtonText}>
-              {isLoading ? 'sending...' : 'Guest login'}
+              {isLoading ? 'sending...' : 'Send Request'}
             </Text>
           </ButtonStyle>
         </View>

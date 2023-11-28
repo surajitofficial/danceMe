@@ -88,7 +88,7 @@ const DjProfile = ({navigation}) => {
             {/* Request button */}
             <TouchableOpacity
               style={styles.button}
-              onPress={() => handleOnClick('DancerListScreen')}>
+              onPress={() => handleOnClick('RequestSongScreen')}>
               <Text style={styles.buttonText}>Request</Text>
             </TouchableOpacity>
             {/* Chat button */}

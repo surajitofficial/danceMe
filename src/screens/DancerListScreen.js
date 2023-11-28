@@ -69,6 +69,7 @@ const DancerList = ({navigation}) => {
             <TouchableOpacity
               style={styles.optionCon}
               onPress={() => {
+                setQuery('');
                 setShowFilterOPtion(prv => !prv);
               }}>
               <Image source={require('../assets/images/filter.png')} />
@@ -105,7 +106,7 @@ const DancerList = ({navigation}) => {
             //   </Text>
             // </View>
           )}
-          {query && isShowFilterOption && (
+          {false && (
             <View style={styles.resultsContainer}>
               {filterData.map((item, index) => (
                 <Text

@@ -169,7 +169,7 @@ const SignInScreen = ({navigation}) => {
           ) : (
             <IconBox name="square-outline" size={20} color="#000" />
           )}
-          <Text style={{marginLeft: 10}}>Remember me</Text>
+          <Text style={[{marginLeft: 10}, rememberMe && {color:'#D9246D'}]}>Remember me</Text>
         </TouchableOpacity>
 
         <Text style={{marginLeft: 10, color: '#D9246D'}}>Forgot password</Text>
